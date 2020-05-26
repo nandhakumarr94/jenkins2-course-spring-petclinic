@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage('Clone sources'){
             steps {
-                git url: 'https://github.com/nandhakumarr94/spring-boot-examples'
+                git url: 'https://github.com/nandhakumarr94/jenkins2-course-spring-petclinic'
             }
         }
 
