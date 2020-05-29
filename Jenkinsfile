@@ -33,16 +33,6 @@ pipeline {
 	      }
 	}
 
-//	stage('Quality Gate') {
-//		steps {
-//			timeout(time: 1, unit: 'HOURS') {
-			//Parameter indicates wether to set pipeline to UNSTABLE if Quality Gate fails
-		        // true = set pipeline to UNSTABLE, false = don't
-			// Requires SonarQube Scanner for Jenkins 2.7+
-//			waitForQualityGate abortPipeline: false
-//		       }
-//		 }
-//	}
 
 	stage('Artifactory configuration') {
 		
@@ -60,7 +50,7 @@ pipeline {
 		    
 			buildInfo = Artifactory.newBuildInfo() //Publishing build-Info to artifactory
 			
-			buildInfo.retention maxBuilds: 10, maxDays: 7, deleteBuildArtifacts: true
+			//buildInfo.retention maxBuilds: 10, maxDays: 7, deleteBuildArtifacts: true
 
 			buildInfo.env.capture = true
 			}
